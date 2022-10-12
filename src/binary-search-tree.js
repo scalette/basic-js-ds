@@ -96,12 +96,23 @@ class BinarySearchTree {
     console.log('connector................')
     console.log( connector)
     console.log('connector................end')
-    return connector
+    return nodeLeft
+  }
+  shuffleS(nodeLeft, nodeRight){
+    let connector = nodeLeft
+    while(connector.right != null){
+      connector = connector.right
+    }
+    connect = nodeRight
+    console.log('connector................')
+    console.log( connector)
+    console.log('connector................end')
+    return nodeLeft
   }
   remove(valueToRemove) {
     //const node = this.find(valueToRemove)
     if(this.tree.data == valueToRemove){
-      this.tree.data = this.shuffle(this.tree.left, this.tree.right)
+      this.tree = this.shuffle(this.tree.left, this.tree.right)
       return
     }
     const node = this.findNodeForRemove(valueToRemove)
@@ -167,6 +178,12 @@ class BinarySearchTree {
       max = max.right
     }
     return max.data
+  }
+  print(){
+    console.log(this.tree.data)
+    console.log(this.tree?.left?.data, this.tree?.right?.data)
+    console.log(this.tree?.left?.left, this.tree?.left?.right, this.tree?.right?.left, this.tree?.right?.right)
+
   }
 }
 
