@@ -119,7 +119,7 @@ class BinarySearchTree {
     if(node){
       const nodeRight = node.right
       const nodeLeft = node.left
-      if(nodeRight.data == valueToRemove){
+      if(nodeRight?.data == valueToRemove){
         if(nodeRight.left == null && nodeRight.right == null){
           node.right = null
           return
